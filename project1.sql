@@ -5,6 +5,7 @@ create table table1 (
 	column4 blob
 );
 
+
 create table basic (
 	seq 		int(10),
 	title 		varchar(300),

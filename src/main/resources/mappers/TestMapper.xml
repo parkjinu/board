@@ -7,4 +7,43 @@
         SELECT CURDATE() as time
     </select>
 
+
+    <select id="selectTable1Count" resultType="int">
+        SELECT COUNT(*) from table1;
+    </select>
+
+    <select id="selectTable1Count2" resultType="int">
+        SELECT COUNT(*) from table1 WHERE column2=#{column2, jdbcType=INTEGER};
+    </select>
+
+    <select id="selectTable1List" resultType="com.example.board.dto.Table1DTO">
+        SELECT * from table1;
+    </select>
+
+    <select id="selectTable1" resultType="com.example.board.dto.Table1DTO">
+        SELECT * from table1
+        WHERE column2 = #{column2};
+    </select>
+
+    <insert id="insertTable1" parameterType="com.example.board.dto.Table1DTO">
+    	INSERT INTO table1
+    	VALUES (
+    		#{column1, jdbcType=VARCHAR},
+    		#{column2, jdbcType=INTEGER},
+    		(SELECT CURDATE() as time),
+    		#{column4, jdbcType=BLOB}
+    	)
+    </insert>
+    <update id="updateTable1" parameterType="com.example.board.dto.Table1DTO">
+    	UPDATE table1
+    	SET column1 = #{column1, jdbcType=VARCHAR},
+    		column4 = #{column4, jdbcType=BLOB} 
+    	WHERE column2 = #{column2, jdbcType=INTEGER}
+    </update>
+	<delete id="deleteTable1">
+		DELETE from table1
+		WHERE
+			column2 = #{column2, jdbcType=INTEGER}
+	</delete>
+	
 </mapper>

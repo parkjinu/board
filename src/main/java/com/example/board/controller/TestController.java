@@ -22,7 +22,7 @@ public class TestController {
     
 //	테스트 데이터
     private String c1 = "title";
-    private String c2 = "1002";
+    private String c2 = "1001";
     private String c4 = "contents";
 
     @RequestMapping("/test")

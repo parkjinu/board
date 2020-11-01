@@ -8,6 +8,8 @@ import com.example.board.dto.Table1DTO;
 public interface TestDao {
     public String selectTest() throws SQLException;
     
+    
+    
     public Table1DTO selectTable1Count() throws SQLException;
     public int selectTable1Count2(int column2) throws SQLException;
     public List<Table1DTO> selectTable1List() throws SQLException;

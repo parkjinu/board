@@ -31,6 +31,8 @@ public class TestController {
         return "test";
     }
 
+    
+    
     @RequestMapping("/table1")
     public String table1(HttpServletRequest req, Model model) throws SQLException {
     	System.out.println("SELECT --");

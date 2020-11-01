@@ -3,6 +3,7 @@ package com.example.board.dto;
 import java.util.Arrays;
 
 public class Table1DTO {
+	
 	String column1;
 	int column2;
 	Object column3;
